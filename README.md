@@ -10,7 +10,6 @@
 - 해당 문서를 다시 봤을 때 추가적인 검색 비용이 들지 않도록 자세히 기록한다.
 - 더 상세한 설명을 하고 싶은 자료는 [블로그](https://white-world.tistory.com/)에 포스팅한다.
 - [Github-Flavoured Markdown](https://guides.github.com/features/mastering-markdown/)의 원칙으로 작성하고, 파일 확장자는 `md`로 작성한다.
-- reference를 정확히 명시한다.
 
 ## 분류
 
