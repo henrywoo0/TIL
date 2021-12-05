@@ -117,11 +117,26 @@
 - `셀렉트(σ)` : 릴레이션에서 주어진 조건에 만족하는 튜플 찾는 연산자 (시그마라고도 읽음) (NULL 결과값은 나타내지 않음)
 - `프로젝트(π)` : 필요한 속성들만 추출하는 연산 (중복 제거!)
 - `디비전(÷)` : 2개의 릴레이션에서 피연산 릴레이션의 속성값을 모두 가진 연산 릴레이션의 속성을 제외한 속성만을 구하는 연산
+- `합집합(∪)` : 두 릴레이션을 합하여 하나의 릴레이션으로 반환 (중복 제거!)
+- `교집합(∩)` : 두 릴레이션에 모두 속한 튜플들로 이루어진 릴레이션
+- `차집합(-)` : 피연산 릴레이션에 속하지 않은 튜플들로 이루어진 릴레이션
+- `카티션 프로덕트(X)` : 연산 릴레이션과 피연산 릴레이션 곱하는 것 (중복 허용)
+- 카티션 프로덕트를 하면 매우 많은 튜플 생성. 그러므로 필요한 자료만 보기 위해 `조인` 사용
+- `동등조인(⋈)` : 양쪽 테이블에서 조인 조건(=)이 일치하는 행만 조인
+- `자연조인(⋈N)` : 동등 조인 결과로 얻어진 불필요한 애트리뷰트 제외한 조인 (중복 애트리뷰트 제거)
+- `세타조인(⋈θ)` : 조인 연산 시 조건이 붙는 조인 (<, >, =, <>, <=, >=)
 - 
 
 ![image](https://user-images.githubusercontent.com/80818534/144736342-107d3eb3-9c0f-4f2c-b820-b72ea713faed.png)
 ![image](https://user-images.githubusercontent.com/80818534/144736412-84da0d7a-bc8b-4f58-a6da-fdc02cee085e.png)
+![image](https://user-images.githubusercontent.com/80818534/144736826-cdf0caaf-39fd-4d60-b9f6-dee0df27f156.png)
+![image](https://user-images.githubusercontent.com/80818534/144736847-62dadf00-adf1-4994-aea5-5881d22720b2.png)
+![image](https://user-images.githubusercontent.com/80818534/144736888-aa8a6047-d86f-4ab4-98f3-4e813767b574.png)
+![image](https://user-images.githubusercontent.com/80818534/144736935-5adfc403-db67-40e2-b2ba-f175dd698cd7.png)
+![image](https://user-images.githubusercontent.com/80818534/144736963-bdb9c0e5-c8a6-4237-9330-365983f613c2.png)
 
+![image](https://user-images.githubusercontent.com/80818534/144737051-f1451e9e-fcdc-45e2-9cd2-086be69694da.png)
+![image](https://user-images.githubusercontent.com/80818534/144737012-b5ad38ca-2bf3-42ce-bc5f-89b29d66400e.png)
 
 
 
