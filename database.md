@@ -2,7 +2,7 @@
 
 대구소프트웨어마이스터고에서 2021학년도 2학기 기말고사 데이터베이스 과목을 대비하기 위해 정리한 내용입니다.
 
-### 데이터
+## 데이터
 
 - `Data(자료)` : 관찰, 검색, 측정을 통해 수집되는 사실이나 값
 - `정보` : 자료의 유효한 해석, 지식
@@ -25,7 +25,7 @@
 - `동시 공용` (concurrent sharing) : 서로 다른 사용자에게 **동시 공유** (여기서 생기는 문제를 해결하기 위해 종속성, 중복성 해결)
 - `내용에 의한 참조` (contents reference) : 주소가 아닌 **데이터 값 참조**. 쿼리를 제시하면 DB는 데이터 검색해서 보내줌
 
-### 파일 시스템 (not DBMS)
+## 파일 시스템 (not DBMS)
 
 - `파일 시스템` : 각각 응용 프로그램이 독립적으로 자료를 **파일 형태로 관리**
 - `데이터 중복성` : 시스템 내 자료가 **중복 저장**되어 비용 증가(비효율적). 응용 프로그램마다 별도로 독립된 파일 때문
@@ -62,14 +62,14 @@
 |응용프로그래머|O|X|O|O|
 |DBA|O|O|O|O|
 
-### 스키마 (Schema)
+## 스키마 (Schema)
 
 - `스키마` : 데이터베이스 구조와 제약 조건에 관해 명세
 - `내부 스키마` : 물리적 저장 위치에 데이터베이스의 저장 위치 명세
 - `개념 스키마` : 전체 데이터베이스의 정의. (하나만 존재)
 - `외부 스키마` : 각 사용자, 응용프로그래머가 각자 필요한 논리적 구조 정의 (=뷰)
 
-### 릴레이션 (Relation)
+## 릴레이션 (Relation)
 
 - `릴레이션` : 테이블(표)
 - `릴레이션 스키마` : 속성들의 집합
@@ -80,7 +80,7 @@
 
 ![image](https://user-images.githubusercontent.com/80818534/144735896-c1769a7a-4070-4406-8406-9978a6ec71aa.png)
 
-### 키 (Key)
+## 키 (Key)
 
 - `Key` : 키를 이용해 특정 튜플을 식별할 때 사용하는 속성
 - `Super Key` (슈퍼키) : 튜플을 유일하게 식별할 수 있는 속성 집합
@@ -97,7 +97,7 @@
 - 키 값 변동 X
 - 최대한 적은 수의 속성을 가진 것
 
-### 무결성 제약조건
+## 무결성 제약조건
 
 - `도메인 무결성 제약조건` : 각 애트리뷰트들의 도메인에 지정된 값만을 가져야 한다는 조건. Type, Null, Default, Check 등을 사용하여 지정
 - `개체 무결성 제약조건` : 기본키의 조건을 지켜야 한다는 제약 조건 (튜플 식별 가능한 고유값, NULL X, 값 변동 X, 최대한 적은 수의 속성)
@@ -113,7 +113,7 @@
 |릴레이션 내 제약조건의 개수|속성 개수와 동일|1개|0~여러 개|
 |기타|튜플 삽입/수정 시 제약 사항 우선 확인|튜플 삽입/수정 시 제약 사항 우선 확인|튜플 삽입/수정 시 제약 사항 우선 확인|
 
-### 관계대수
+## 관계대수
 
 - `관계대수` : 관계형 DB 내에서 원하는 정보를 어떻게 찾아낼지 기술하는 절차적 언어
 - `셀렉트(σ)` : 릴레이션에서 주어진 조건에 만족하는 튜플 찾는 연산자 (시그마라고도 읽음) (NULL 결과값은 나타내지 않음)
@@ -145,7 +145,7 @@
 ![image](https://user-images.githubusercontent.com/80818534/144737524-24f9a107-275d-457f-8bbf-7d8386f7e120.png)
 ![image](https://user-images.githubusercontent.com/80818534/144737528-f313252d-93b5-42b2-aa64-745e3773d386.png)
 
-### MySQL의 자료형
+## MySQL의 자료형
 
 - `INT` : 정수형 4byte
 - `BIGINT` : 정수형 8byte
@@ -156,7 +156,7 @@
 
 ![image](https://user-images.githubusercontent.com/80818534/144737614-dbb6756a-f9f6-4d80-b135-4e9d90405111.png)
 
-### DDL (Data Definition Language)
+## DDL (Data Definition Language)
 
 - `CREATE` : 테이블 생성
 - `ALTER` : 테이블 수정
@@ -185,7 +185,7 @@ CREATE TABLE user (
 DROP TABLE user;
 ```
 
-### Foreign Key
+## Foreign Key
 
 - Foreign key(외래키) 조건이 붙는 이유 : 변경/삭제 시 문제점 발견
 - 아래는 Foreign key(외래키) 조건 사용법
@@ -204,7 +204,7 @@ FOREIGN KEY 고객번호 REFERENCES 고객(고객번호) ON DELETE SET NULL ON U
 
 ![image](https://user-images.githubusercontent.com/80818534/144737956-434dd056-6ae9-4b9b-acf4-ba21cfe32ea3.png)
 
-### DML (Data Manipulation Language)
+## DML (Data Manipulation Language)
 
 - `SELECT` : 데이터 조회 (from, where, group by, having, order by)
 - `INSERT` : 데이터 삽입
@@ -250,6 +250,6 @@ DELETE FROM reservation WHERE Name = '홍길동';
 
 ![image](https://user-images.githubusercontent.com/80818534/144738472-39514e6a-8b25-4188-ab9b-1e854fb6b997.png)
 
-
+## 
 
 
