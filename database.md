@@ -250,6 +250,44 @@ DELETE FROM reservation WHERE Name = '홍길동';
 
 ![image](https://user-images.githubusercontent.com/80818534/144738472-39514e6a-8b25-4188-ab9b-1e854fb6b997.png)
 
-## 
+## JOIN
+
+INNER JOIN 방법
+```sql
+SELECT 애트리뷰트명 FROM 테이블명 INNER JOIN 조인할 테이블 ON 조인에 사용될 애트리뷰트 조건;
+```
+
+NATURAL JOIN 사용 방법
+```sql
+SELECT 애트리뷰트명 FROM 테이블명 NATURAL JOIN 조인할 테이블;
+```
+
+- 자연 조인 시 조인에 참여하는 애트리뷰트 중 **이름이 같은 모든 애트리뷰트**를 활용하여 조인
+- 동등조인과 차이점은 **중복 애트리뷰트 하나만 출력**한다는 점
+- 조인에 사용될 애트리뷰트를 미리 확인해야 함 (조건이 없음)
+
+OUTER JOIN 사용 방법
+```sql
+SELECT 애트리뷰트명 FROM 테이블명 OUTER JOIN 조인할 테이블 ON 애트리뷰트=애트리뷰트;
+```
+
+- 조인 연산 시 외부조인하는 릴레이션의 정보를 버리지 않고 보여줌
+- 꼭 필요한 정보를 남겨두기 위해 사용
+- 해당 정보가 없는 곳은 `NULL`값 채움
+- 외부 조인 시 조건 꼭 명시
+
+LEFT OUTER JOIN 예제
+```sql
+SELECT * FROM aaa LEFT OUTER JOIN bbb ON aaa.b = bbb.B;
+```
+
+RIGHT OUTER JOIN 예제
+```sql
+SELECT * FROM aaa RIGHT OUTER JOIN bbb ON aaa.b = bbb.B;
+```
+
+- MySQL에서 FULL OUTER JOIN은 작동하지 않음.
+- FULL OUTER JOIN 사용하려면 UNION 활용하기
+
 
 
