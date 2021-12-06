@@ -289,5 +289,75 @@ SELECT * FROM aaa RIGHT OUTER JOIN bbb ON aaa.b = bbb.B;
 - MySQL에서 FULL OUTER JOIN은 작동하지 않음.
 - FULL OUTER JOIN 사용하려면 UNION 활용하기
 
+## LIKE, %, _
+
+- 특정 문자로 시작하는 데이터 검색
+- (뒤에 자릿수는 상관 X, 문자열만 있어도 검색됨)
+```sql
+SELECT 필드명 FROM 테이블명 WHERE 필드명 LIKE '특정 문자열%';
+```
+
+- 특정 문자로 끝나는 데이터 검색
+- (앞에 자릿수는 상관 X, 문자열만 있어도 검색됨)
+```sql
+SELECT 필드명 FROM 테이블명 WHERE 필드명 LIKE '%특정 문자열';
+```
+
+- 특정 문자 포함 데이터 검색
+- (앞, 뒤에 자릿수는 상관 X, 문자열만 있어도 검색됨)
+```sql
+SELECT 필드명 FROM 테이블명 WHERE 필드명 LIKE '%특정 문자열%';
+```
+
+- 특정 문자 포함 데이터 검색
+- (앞 자릿수는 1칸 상관없이, 나머지 문자열 중 해당 문자열만 있어도 검색
+```sql
+SELECT 필드명 FROM 테이블명 WHERE 필드명 LIKE '_특정 문자열%';
+```
+
+## EXIST, IN
+
+- `EXISTS` : 서브쿼리가 반환하는 결과값이 있는지 조사하는 것 (단지 반환된 행이 있는지 없는지 확인하고 참/거짓 반환)
+- `EXISTS` 연산자의 처리 순서는 메인쿼리 -> 서브쿼리 순임
+- 서브 쿼리에서 메인의 정보를 가져올 수 없기 때문에 조건을 각각 설정
+- `IN` : 집합 내부에 값이 존재하는지 여부 확인 (실제 데이터 값 비교함)
+- `IN` 연산자의 처리 순서는 서브쿼리 -> 메인쿼리
+- 서브 쿼리에서 메인의 정보를 가져와 모든 조건을 한 번에 정리 (데이터, 조건 확인)
+- `IN`과 `EXISTS`는 기능상 차이점은 없지만 수행 시간 관점에서는 차이가 있음
+- `NOT IN`은 NULL 포함 시 값을 반환하지 못함 (NULL이 UNKNOWN이기 때문)
+
+```sql
+SELECT a.name FROM songclass3 a WHERE a.name IN(SELECT b.name FROM dbpro b);
+```
+
+```sql
+SELECT a.name FROM songclass3 a WHERE a.name NOT IN(SELECT b.name FROM dbpro b);
+```
+
+```sql
+SELECT a.name FROM songclass3 a WHERE EXISTS(SELECT b.name FROM dbpro b WHERE a.name = b.name);
+```
+
+```sql
+SELECT a.name FROM songclass3 a WHERE NOT EXISTS(SELECT b.name FROM dbpro b WHERE a.name = b.name);
+```
+ 
+## ANY, SOME, ALL
+
+- 서브쿼리와의 값 비교
+- ANY, SOME : 서브쿼리의 값 중 조건에 하나라도 만족할 경우 참
+- ALL : 서브쿼리의 값 중 조건에 모두 다 만족할 경우
+
+
+
+
+
+
+
+
+
+
+
+
 
 
