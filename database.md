@@ -345,17 +345,62 @@ SELECT a.name FROM songclass3 a WHERE NOT EXISTS(SELECT b.name FROM dbpro b WHER
 ## ANY, SOME, ALL
 
 - 서브쿼리와의 값 비교
-- ANY, SOME : 서브쿼리의 값 중 조건에 하나라도 만족할 경우 참
-- ALL : 서브쿼리의 값 중 조건에 모두 다 만족할 경우
+- `ANY`, `SOME` : 서브쿼리의 값 중 조건에 하나라도 만족할 경우 참
+- `ALL` : 서브쿼리의 값 중 조건에 모두 다 만족할 경우
 
+```sql
+SELECT name, point FROM test2 WHERE point > ANY (SELECT point FROM test1);
+```
 
+```sql
+SELECT name, point FROM test2 WHERE point > ALL (SELECT point FROM test1);
+```
 
+```sql
+SELECT name, point FROM test2 WHERE point > SOME (SELECT point FROM test1);
+```
 
+- `IN` : 서브쿼리의 결과에 존재하는 **임의의 값과 동일**한 조건
+- `ALL` : 서브쿼리의 결과에 존재하는 **모든 값을 만족**하는 조건
+- `ANY` : 서브쿼리의 결과에 존재하는 **어느 하나의 값이라도 만족**하는 조건
+- `EXISTS` : 서브쿼리의 결과를 만족하는 값이 **존재하는지 여부 확인**하는 조건
 
+## IF, CASE
 
+- `IF`와 `CASE`는 SELECT절에 쓰인다
+- `IF`는 C언어와 동일한 원리 ( `IF(조건, 참, 거짓)`
+- CASE 사용법
+```sql
+CASE
+  WHEN(조건) THEN 결과
+  WHEN(조건) THEN 결과
+  ...
+END (AS 애트리뷰트명)
+```
 
+IF 예제
+```sql
+SELECT *, IF(point > 80, 'high', 'low') AS grade FROM class1;
+```
 
+CASE 예제
+```sql
+SELECT id, name, point,
+  CASE
+    WHEN(point BETWEEN 80 AND 100) THEN 'A'
+    WHEN(point BETWEEN 60 AND 80) THEN 'B'
+    WHEN(point BETWEEN 40 AND 60) THEN 'C'
+    WHEN(point BETWEEN 20 AND 40) THEN 'D'
+    WHEN(point BETWEEN 0 AND 20) THEN 'E'
+  END AS grade
+FROM class1;
+```
 
+## CONCAT
+
+```sql
+SELECT id, CONCAT(name, ':', point) AS jumsu FROM class1;
+```
 
 
 
