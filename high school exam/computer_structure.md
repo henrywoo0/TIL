@@ -307,13 +307,14 @@
 
 - `LOAD` : 인출
 - `ADD` : 덧셈
-- `STA` : 저장
+- `STORE(혹은 STA)` : 저장
 - `JUMP` : 분기
 
 ## CPU 기능 (명령어 사이클)
 
 - `명령어 인출` (Instruction Fetch) : 기억 장치로부터 명령어를 읽어온다
 - `명령어 해독` (Instruction Decode) : 수행해야 할 동작을 결정하기 위해 명령어 해독
+- CPU는 명령어 `인출`, `해석`, `실행` 과정을 거쳐 명령어를 수행함
 
 ## 기억 장치
 
@@ -381,7 +382,8 @@
 - `Flash Memory` (USB Memory) : 읽고 쓰기가 가능한 `EEPROM`을 변형한 것. 전원 공급이 없어도 **내용 보존**(ROM), 임의로 기록 혹은 수정 가능(RAM)
 - `Flash Memory`의 속도는 `RAM`과 `EEPROM`에 비해 느림. 또한 특정 공간에 10만 번 이상 기록 시 그 공간 파손
 
-
+![image](https://user-images.githubusercontent.com/80818534/146007320-f32c9a22-0c89-447a-9a99-586f0cde1341.png)
+참고) ROM Writer
 
 
 
