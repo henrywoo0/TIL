@@ -237,4 +237,6 @@
 
 ## Thread/Socket: 수업에 사용한 소스 (스레드 약 3~5문제 출제 + 소켓 약 5~7문제 출제) (메신저, 파일전송, UDP)
 
-[메신저 프로그램 바로가기](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/socketChatting)
+[메신저 코드](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/socketChatting)<br>
+[파일 전송 코드](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/ftp)<br>
+[UDP 코드](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/udp)
