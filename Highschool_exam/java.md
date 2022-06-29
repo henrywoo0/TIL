@@ -165,18 +165,83 @@ public class Car{
 
 ## 11. 정수형 자료형의 오버플로우 시 결과값
 
+- int형에서 `2147483647 + 1`을 할 경우 `-2147483648`이 됨 (오버플로우)
+- 보통 오버플로우 시 그 자료형이 표현할 수 있는 최소값이 됨
+
 ## 12. 접근 제한자 (default, private, protected) 등의 접근 가능 범위
+
+- `default` : 같은 패키지 내에서만 접근 가능
+- `private` : 같은 클래스에서만 접근 가능
+- `protected` : 같은 패키지이거나 상속한 클래스에서 접근 가능
+- `public`: 어디서든 접근 가능
 
 ## 13. Object 클래스에 대한 이해 (wait, notify, notifyAll, 재정의, 객체화, toString, getClass)
 
+- `wait()` : 해당 객체의 다른 스레드를 일시적으로 대기시킴.
+- `notify()` : 해당 객체의 대기하는 스레드 하나를 다시 실행
+- `notifyAll()` : 해당 객체의 대기하는 모든 스레드를 다시 실행
+- `toString()` : 해당 객체의 정보를 문자열로 반환 (재정의하지 않으면 클래스.이름@hashCode 문자열 반환)
+- `getClass()` : 해당 객체의 클래스 타입 반환
+- 객체화 하려면 `new Object()`
+- 해당 메서드들을 Overriding해서 구현 내용을 바꿀 수 있음 (toString, equals, hashCode 등의 메서드들은 보통 오버라이딩해서 사용)
+
 ## 14. 추상클래스와 인터페이스의 사용법(선언 방법, 상속 방법 등)
+
+- 추상클래스는 `extends`를 이용하여, 인터페이스는 `implements`를 이용하여 상속(구현)한다.
+- 추상클래스는 class 앞에 `abstract` 키워드를 붙여야 한다. (메서드에도 `abstract` 붙여야 함)
+- 추상클래스의 상수에는 `static`을 명시해줘야 한다.
+- 인터페이스의 모든 필드는 `public static final`이어야 한다. (생략 가능)
+- 인터페이스의 모든 메서드는 `public abstract`이어야 한다. (생략 가능)
+- 일반 상속은 다중 상속이 안 되는 반면, 인터페이스를 사용하면 `다중 상속`이 가능하다.
 
 ## 15. File 클래스의 메서드 이해 (exist, length, isDirectory, isFile, delete, mkdirs)
 
+- `File 클래스` : 파일, 폴더에 대한 제어를 하는데 사용하는 클래스
+- `boolean exists()` : 파일의 실존 여부 리턴
+- `long length()` : 해당 경로 파일의 길이(크기) 반환
+- `boolean isDirectory()` : 해당 경로가 디렉토리(폴더)인지 여부 반환 (파일이라면 false)
+- `boolean isFile()` : 해당 경로가 일반 파일인지 여부 반환 (디렉토리면 false)
+- `boolean delete()` : 파일이나 폴더 삭제 (폴더가 비어있지 않으면 false)
+- `boolean mkdirs()` : 존재하지 않는 부모 폴더까지 포함해서 해당 경로에 폴더(디렉토리) 생성
+
 ## 16. 배열과 리스트 객체의 차이, 데이터 추가, 데이터 가져오기, 리스트 크기 등
+
+- 배열 : 고정적인 크기, 연속적인 메모리 공간, 원소 삽입/제거 시 다른 원소들을 수동으로 옮겨줘야 함
+- 리스트(컬렉션 프레임워크) : 가변적인 크기, 메서드를 활용하기 때문에 원소 삽입/삭제 시에도 중간에 빈 공간이 생기지 않음
+- `List` 인터페이스를 구현한 클래스에는 `LinkedList`, `ArrayList` 등이 있음
+- `add(인덱스, 값)` : 리스트에 원소 추가. 인덱스는 생략 가능하며, 생략 시 맨 뒤에 원소 추가.
+- `get(인덱스)` : 해당 인덱스의 값 반환
+- `set(인덱스, 값)` : 해당 인덱스 값 변경
+- `size()` : 리스트 요소 개수 반환
 
 ## 17. InputStream, OutputStream 메서드 이해
 
+- `InputStream` : 바이트 기반 입력 스트림의 최상위 클래스 (추상 클래스)
+- `OutputStream` : 바이트 기반 출력 스트림의 최상위 클래스 (추상 클래스)
+
+![image](https://user-images.githubusercontent.com/80818534/176428916-51154d40-0d56-44e0-8088-cd118e713945.png)
+
+- `InputStream`의 메서드들
+- `void close()` : 현재 열려있는 InputStream을 닫음
+- `abstract int read()` : InputStream에서 한 바이트를 읽어서 int값으로 반환
+- `int read(byte[] b)` : byte[]만큼 데이터를 읽어서 b에 저장하고 읽은 바이트 수를 반환
+- `int read(byte[] b, int off, int len)` : len만큼 읽어서 byte[] b의 off위치에 저장하고 읽은 바이트 수를 반환
+
+<hr>
+
+- `void close()` : OutputStream을 닫음
+- `void flush()` : 버퍼에 남아있는 출력 스트림을 출력
+- `void write(byte[] b)` : 버퍼의 내용을 출력
+- `void write(byte[] b, int off, int len)` : b 배열 안에 있는 시작 off부터 len만큼 출력
+
 ## 18. 스레드 메서드(stop, interrupt, InterruptedException, 쓰레드 우선권, setDaemon(true), join, notify)의 이해
+
+- `join()` : 다른 스레드 작업이 모두 끝날 때까지 기다리기 (인자로 시간 전달 가능)
+- `stop()` : 스레드 종료 (안전하지 못함)
+- `notify()` : wait 상태의 스레드를 깨워서 실행한다
+- `interrupt()` : `InterruptException` 발생, 스레드 종료
+- 쓰레드 우선권 : `setPriority()`에 인자로 1~10 전달. 숫자가 높을수록 우선순위가 높음
+- `setDaemon(true)` : 해당 스레드를 데몬 스레드를 만드는 메서드 (`start()` 전에 호출해야 함)
+- 데몬 스레드 : 주 스레드의 작업을 돕는 보조적인 역할을 수행하는 스레드
 
 ## 19. 다형성, 다중 상속, 추상화의 개념
