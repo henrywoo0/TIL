@@ -245,3 +245,21 @@ public class Car{
 - 데몬 스레드 : 주 스레드의 작업을 돕는 보조적인 역할을 수행하는 스레드
 
 ## 19. 다형성, 다중 상속, 추상화의 개념
+
+- `다형성(polymorphism)` : 하나의 객체가 여러 가지 타입을 가질 수 있는 것
+- 자바에서는 이러한 다형성을 부모-자식 간의 상속으로 구현한다.
+
+```java
+class Parent { ... }
+class Child extends Parent { ... }
+
+...
+
+Parent pa = new Parent(); // 허용
+Child ch = new Child();   // 허용
+Parent pc = new Child();  // 허용
+Child cp = new Parent();  // 오류 발생.
+```
+
+- 다중 상속 : 인터페이스 implements를 통해 가능하다.
+- `추상화` : 공통된 특징을 묶어 하나의 클래스로 정의하는 것
