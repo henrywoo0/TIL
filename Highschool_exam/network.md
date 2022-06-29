@@ -1,6 +1,6 @@
 # 1학기 네트워크 시험 준비
 
-## 카훗 문제 (약 10문제)
+## 카훗 문제 (약 10문제 출제 예정)
 
 - 데이터 전송에서 사용되는 데이터의 묶음은? : `패킷`
 - 정보량의 최소 기본 단위로 이진수 체계(0, 1)의 한 자리를 나타내는 단위는? : `바이트`
@@ -63,7 +63,7 @@
 - 다음 중 메일 송신 프로토콜은? : `SMTP`
 - 다음 중 메일 수신 프로토콜은? : `POP3`
 
-## 모두의 네트워크 교재 정리 (약 5문제 출제)
+## 모두의 네트워크 교재 정리 (약 5문제 출제 예정)
 
 ### 1장 : 네트워크 첫걸음
 
@@ -235,7 +235,9 @@
 | SMTP     | 메일 송신      |
 | POP3     | 메일 수신      |
 
-## Thread/Socket: 수업에 사용한 소스 (스레드 약 3~5문제 출제 + 소켓 약 5~7문제 출제) (메신저, 파일전송, UDP)
+## Thread/Socket: 수업에 사용한 소스
+
+(스레드 약 3~5문제 출제 예정 + 소켓 약 5~7문제 출제 예정) (메신저, 파일전송, UDP)<br>
 
 [메신저 코드](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/socketChatting)<br>
 [파일 전송 코드](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/ftp)<br>
