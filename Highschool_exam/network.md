@@ -235,9 +235,33 @@
 | SMTP     | 메일 송신      |
 | POP3     | 메일 수신      |
 
+### HTTP
+
+- `HTTP/1.0`, `HTTP/1.1`, `HTTP/2.0` 버전으로 나뉜다.
+- `HTTP/1.0` : 요청을 보낼 때마다 연결하고 끊는 작업을 반복해야 한다.
+- `HTTP/1.1` : `keepalive` 기능 도입으로, 연결 수립 후 여러 데이터 교환을 모두 끝내고 연결을 끊을 수 있다.
+- `HTTP/2.0` : 요청을 보낸 순서대로 응답하지 않아도 된다.
+
+### 무선랜
+
+- 무선 랜은 `무선 액세스 포인트(무선 AP)` 및 `무선 클라이언트`로 이루어짐
+- 컴퓨터가 무선 AP와 통신하려면 `무선 랜 칩`과 `무선 랜 어댑터`가 필요하다.
+- 무선 랜을 연결하는 방식에는 크게 `인프라스트럭처 방식`과 `애드혹 방식`이 있다.
+- `인프라스트럭처(infrastructure) 방식` : 무선 클라이언트가 무선 AP를 통해 통신
+- `애드혹(Ad Hoc) 방식` : 무선 클라이언트끼리 직접 통신
+
+![image](https://user-images.githubusercontent.com/80818534/176625871-df0861ae-0609-4768-9841-ddba199a95eb.png)
+
+- 무선 랜은 `IEEE802.11` 규격이 있음
+- `SSID(Service Set IDentifier)` : 액세스 포인트 고유의 이름 (혼선을 피하기 위해 사용)
+- `채널` : 여러 기기를 동시에 연결할 수 있도록 **주파수 대역**을 분할할 때 그 주파수 대역을 뜻함
+- 전파가 겹치는 무선 공유기들을 같은 채널로 설정 -> 주파수가 겹치면서 **전파 간섭**이 생김, 통신 속도 느려짐
+
 ## Thread/Socket: 수업에 사용한 소스
 
-(스레드 약 3~5문제 출제 예정 + 소켓 약 5~7문제 출제 예정) (메신저, 파일전송, UDP)<br>
+(스레드 약 3~5문제 출제 예정)<br>
+(소켓 약 5~7문제 출제 예정)<br>
+(메신저, 파일전송, UDP)<br>
 
 [메신저 코드](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/socketChatting)<br>
 [파일 전송 코드](https://github.com/whitebear05/Java-Study/tree/master/src/assignments/ftp)<br>
